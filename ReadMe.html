@@ -63,6 +63,49 @@ test_subject &lt;- read.table(&quot;UCI HAR Dataset/test/subject_test.txt&quot;)
 train_X &lt;- read.table(&quot;UCI HAR Dataset/train/X_train.txt&quot;)
 train_y &lt;- read.table(&quot;UCI HAR Dataset/train/y_train.txt&quot;)
 train_subject &lt;- read.table(&quot;UCI HAR Dataset/train/subject_train.txt&quot;)</code></pre>
+<p>Then complete step 1 by combining the train and test datasets with their activity and subject columns, then add the two of them together:</p>
+<pre><code>test_combined &lt;- cbind(test_X,test_y,test_subject)
+train_combined &lt;- cbind(train_X,train_y,train_subject)
+
+all_data &lt;- rbind(test_combined,train_combined)</code></pre>
+<p>For step 2 and preparation for the following steps, read in the column labels and activity names:</p>
+<pre><code>labels &lt;- read.table(&quot;UCI HAR Dataset/features.txt&quot;)
+activities &lt;- read.table(&quot;UCI HAR Dataset/activity_labels.txt&quot;)</code></pre>
+<p>And complete step 2 by searching for columns with mean or std in their names, and keeping the activity and subject columns:</p>
+<pre><code>labels$V2 &lt;- lapply(labels$V2, as.character)
+mean_std_cols &lt;- grep(&quot;std|mean&quot;, labels$V2)
+mean_std_subset &lt;- all_data[,c(mean_std_cols,562,563)]</code></pre>
+<p>For step 3, simply change the numbers in the activity column (currently named $V1.1) with factors from the activity text</p>
+<pre><code>mean_std_subset$V1.1&lt;- factor(mean_std_subset$V1.1, levels = activities$V1, labels = activities$V2)</code></pre>
+<p>For step 4, give the columns names from the labels read in earlier, plus “Activity” and “Subject”:</p>
+<pre><code>names(mean_std_subset) &lt;- c(labels[mean_std_cols,]$V2,&quot;Activity&quot;,&quot;Subject&quot;)</code></pre>
+<p>Then finish by replacing the various parts of the column names with more human-readable terms:</p>
+<pre><code>names(mean_std_subset) &lt;- sub(&quot;^f&quot;, &quot;frequency domain &quot;, names(mean_std_subset))
+names(mean_std_subset) &lt;- sub(&quot;^t&quot;, &quot;time &quot;, names(mean_std_subset))
+
+names(mean_std_subset) &lt;- sub(&quot;-X&quot;, &quot;on the X axis&quot;, names(mean_std_subset))
+names(mean_std_subset) &lt;- sub(&quot;-Y&quot;, &quot;on the Y axis&quot;, names(mean_std_subset))
+names(mean_std_subset) &lt;- sub(&quot;-Z&quot;, &quot;on the Z axis&quot;, names(mean_std_subset))
+
+names(mean_std_subset) &lt;- sub(&quot;(.*)(-meanFreq\\(\\))&quot;, &quot;Mean frequency of \\1&quot;, names(mean_std_subset))
+names(mean_std_subset) &lt;- sub(&quot;(.*)(-mean\\(\\))&quot;, &quot;Mean of \\1&quot;, names(mean_std_subset))
+names(mean_std_subset) &lt;- sub(&quot;(.*)(-std\\(\\))&quot;, &quot;Std Dev of \\1&quot;, names(mean_std_subset))
+
+names(mean_std_subset) &lt;- sub(&quot;Gravity&quot;, &quot;gravity &quot;, names(mean_std_subset))
+names(mean_std_subset) &lt;- sub(&quot;Body&quot;, &quot;body &quot;, names(mean_std_subset))
+names(mean_std_subset) &lt;- sub(&quot;Acc&quot;, &quot;acceleration &quot;, names(mean_std_subset))
+names(mean_std_subset) &lt;- sub(&quot;Jerk&quot;, &quot;jerk signals &quot;, names(mean_std_subset))
+names(mean_std_subset) &lt;- sub(&quot;Gyro&quot;, &quot;gyro signals &quot;, names(mean_std_subset))
+names(mean_std_subset) &lt;- sub(&quot;of (.*)(Mag)&quot;, &quot;of the magnitude of \\1&quot;, names(mean_std_subset))</code></pre>
+<p>Per the message boards, eliminate the spare “Body” in some variable names (“BodyBody”) and get rid of a few trailing spaces</p>
+<pre><code>names(mean_std_subset) &lt;- sub(&quot;Body&quot;, &quot;&quot;, names(mean_std_subset))
+
+names(mean_std_subset) &lt;- sub(&quot; $&quot;, &quot;&quot;, names(mean_std_subset))</code></pre>
+<p>Finally, use ddply() from the plyr package to take a column-wise mean for each subject and activity:</p>
+<pre><code>library(plyr)
+mssMeans &lt;- ddply(mean_std_subset, .(Subject, Activity), colwise(mean))</code></pre>
+<p>And output it to “tidied.txt”</p>
+<pre><code>write.table(mssMeans, &quot;tidied.txt&quot;)</code></pre>
 
 
 </div>
