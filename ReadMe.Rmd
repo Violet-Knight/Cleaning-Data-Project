@@ -94,6 +94,6 @@ mssMeans <- ddply(mean_std_subset, .(Subject, Activity), colwise(mean))
 And output it to "tidied.txt"
 
 ```
-write.table(mssMeans, "tidied.txt")
+write.table(mssMeans, "tidied.txt", row.names=FALSE)
 ```
 

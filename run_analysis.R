@@ -67,4 +67,4 @@ names(mean_std_subset) <- sub(" $", "", names(mean_std_subset))
 library(plyr)
 mssMeans <- ddply(mean_std_subset, .(Subject, Activity), colwise(mean))
 
-write.table(mssMeans, "tidied.txt")
+write.table(mssMeans, "tidied.txt", row.names=FALSE)
