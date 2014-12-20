@@ -52,7 +52,7 @@ names(mean_std_subset) <- sub("Gravity", "gravity ", names(mean_std_subset))
 names(mean_std_subset) <- sub("Body", "body ", names(mean_std_subset))
 names(mean_std_subset) <- sub("Acc", "acceleration ", names(mean_std_subset))
 names(mean_std_subset) <- sub("Jerk", "jerk signals ", names(mean_std_subset))
-names(mean_std_subset) <- sub("Gyro", "gyro signals ", names(mean_std_subset))
+names(mean_std_subset) <- sub("Gyro", "gyro ", names(mean_std_subset))
 names(mean_std_subset) <- sub("of (.*)(Mag)", "of the magnitude of \\1", names(mean_std_subset))
 
 ## Spare 'Body' in some variable names that may be a typo, per message boards
@@ -68,3 +68,6 @@ library(plyr)
 mssMeans <- ddply(mean_std_subset, .(Subject, Activity), colwise(mean))
 
 write.table(mssMeans, "tidied.txt", row.names=FALSE)
+
+## New feature names:
+## write.table(names(mean_std_subset),"features.txt", quote=FALSE, row.names=FALSE)

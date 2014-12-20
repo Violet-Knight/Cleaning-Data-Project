@@ -1,0 +1,82 @@
+x
+Mean of time body acceleration on the X axis
+Mean of time body acceleration on the Y axis
+Mean of time body acceleration on the Z axis
+Std Dev of time body acceleration on the X axis
+Std Dev of time body acceleration on the Y axis
+Std Dev of time body acceleration on the Z axis
+Mean of time gravity acceleration on the X axis
+Mean of time gravity acceleration on the Y axis
+Mean of time gravity acceleration on the Z axis
+Std Dev of time gravity acceleration on the X axis
+Std Dev of time gravity acceleration on the Y axis
+Std Dev of time gravity acceleration on the Z axis
+Mean of time body acceleration jerk signals on the X axis
+Mean of time body acceleration jerk signals on the Y axis
+Mean of time body acceleration jerk signals on the Z axis
+Std Dev of time body acceleration jerk signals on the X axis
+Std Dev of time body acceleration jerk signals on the Y axis
+Std Dev of time body acceleration jerk signals on the Z axis
+Mean of time body gyro on the X axis
+Mean of time body gyro on the Y axis
+Mean of time body gyro on the Z axis
+Std Dev of time body gyro on the X axis
+Std Dev of time body gyro on the Y axis
+Std Dev of time body gyro on the Z axis
+Mean of time body gyro jerk signals on the X axis
+Mean of time body gyro jerk signals on the Y axis
+Mean of time body gyro jerk signals on the Z axis
+Std Dev of time body gyro jerk signals on the X axis
+Std Dev of time body gyro jerk signals on the Y axis
+Std Dev of time body gyro jerk signals on the Z axis
+Mean of the magnitude of time body acceleration
+Std Dev of the magnitude of time body acceleration
+Mean of the magnitude of time gravity acceleration
+Std Dev of the magnitude of time gravity acceleration
+Mean of the magnitude of time body acceleration jerk signals
+Std Dev of the magnitude of time body acceleration jerk signals
+Mean of the magnitude of time body gyro
+Std Dev of the magnitude of time body gyro
+Mean of the magnitude of time body gyro jerk signals
+Std Dev of the magnitude of time body gyro jerk signals
+Mean of frequency domain body acceleration on the X axis
+Mean of frequency domain body acceleration on the Y axis
+Mean of frequency domain body acceleration on the Z axis
+Std Dev of frequency domain body acceleration on the X axis
+Std Dev of frequency domain body acceleration on the Y axis
+Std Dev of frequency domain body acceleration on the Z axis
+Mean frequency of frequency domain body acceleration on the X axis
+Mean frequency of frequency domain body acceleration on the Y axis
+Mean frequency of frequency domain body acceleration on the Z axis
+Mean of frequency domain body acceleration jerk signals on the X axis
+Mean of frequency domain body acceleration jerk signals on the Y axis
+Mean of frequency domain body acceleration jerk signals on the Z axis
+Std Dev of frequency domain body acceleration jerk signals on the X axis
+Std Dev of frequency domain body acceleration jerk signals on the Y axis
+Std Dev of frequency domain body acceleration jerk signals on the Z axis
+Mean frequency of frequency domain body acceleration jerk signals on the X axis
+Mean frequency of frequency domain body acceleration jerk signals on the Y axis
+Mean frequency of frequency domain body acceleration jerk signals on the Z axis
+Mean of frequency domain body gyro on the X axis
+Mean of frequency domain body gyro on the Y axis
+Mean of frequency domain body gyro on the Z axis
+Std Dev of frequency domain body gyro on the X axis
+Std Dev of frequency domain body gyro on the Y axis
+Std Dev of frequency domain body gyro on the Z axis
+Mean frequency of frequency domain body gyro on the X axis
+Mean frequency of frequency domain body gyro on the Y axis
+Mean frequency of frequency domain body gyro on the Z axis
+Mean of the magnitude of frequency domain body acceleration
+Std Dev of the magnitude of frequency domain body acceleration
+Mean frequency of the magnitude of frequency domain body acceleration
+Mean of the magnitude of frequency domain body acceleration jerk signals
+Std Dev of the magnitude of frequency domain body acceleration jerk signals
+Mean frequency of the magnitude of frequency domain body acceleration jerk signals
+Mean of the magnitude of frequency domain body gyro
+Std Dev of the magnitude of frequency domain body gyro
+Mean frequency of the magnitude of frequency domain body gyro
+Mean of the magnitude of frequency domain body gyro jerk signals
+Std Dev of the magnitude of frequency domain body gyro jerk signals
+Mean frequency of the magnitude of frequency domain body gyro jerk signals
+Activity
+Subject

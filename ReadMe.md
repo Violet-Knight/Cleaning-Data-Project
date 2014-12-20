@@ -2,6 +2,13 @@
 title: "ReadMe"
 ---
 
+run_analysis.R processes data collected in a test of 30 subjects wearing
+Samsung Galaxy S phones. Many categories of information were recorded, but
+this script isolates the mean and standard deviations of each measurement
+from the phone's accelerometers. It combines the 'training' and 'test'
+subject data, renames variables with more human-readable language, and
+creates a tidy data set with the average for each variable and subject,
+outputting it to a file called 'tidied.txt'.
 
 First we read the main data files.
 
@@ -71,7 +78,7 @@ names(mean_std_subset) <- sub("Gravity", "gravity ", names(mean_std_subset))
 names(mean_std_subset) <- sub("Body", "body ", names(mean_std_subset))
 names(mean_std_subset) <- sub("Acc", "acceleration ", names(mean_std_subset))
 names(mean_std_subset) <- sub("Jerk", "jerk signals ", names(mean_std_subset))
-names(mean_std_subset) <- sub("Gyro", "gyro signals ", names(mean_std_subset))
+names(mean_std_subset) <- sub("Gyro", "gyro ", names(mean_std_subset))
 names(mean_std_subset) <- sub("of (.*)(Mag)", "of the magnitude of \\1", names(mean_std_subset))
 ```
 
