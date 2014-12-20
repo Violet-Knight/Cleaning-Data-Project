@@ -96,7 +96,7 @@ names(mean_std_subset) &lt;- sub(&quot;Gravity&quot;, &quot;gravity &quot;, name
 names(mean_std_subset) &lt;- sub(&quot;Body&quot;, &quot;body &quot;, names(mean_std_subset))
 names(mean_std_subset) &lt;- sub(&quot;Acc&quot;, &quot;acceleration &quot;, names(mean_std_subset))
 names(mean_std_subset) &lt;- sub(&quot;Jerk&quot;, &quot;jerk signals &quot;, names(mean_std_subset))
-names(mean_std_subset) &lt;- sub(&quot;Gyro&quot;, &quot;gyro signals &quot;, names(mean_std_subset))
+names(mean_std_subset) &lt;- sub(&quot;Gyro&quot;, &quot;gyro &quot;, names(mean_std_subset))
 names(mean_std_subset) &lt;- sub(&quot;of (.*)(Mag)&quot;, &quot;of the magnitude of \\1&quot;, names(mean_std_subset))</code></pre>
 <p>Per the message boards, eliminate the spare “Body” in some variable names (“BodyBody”) and get rid of a few trailing spaces</p>
 <pre><code>names(mean_std_subset) &lt;- sub(&quot;Body&quot;, &quot;&quot;, names(mean_std_subset))
